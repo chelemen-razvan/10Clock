@@ -43,7 +43,7 @@ open class TenClock : UIControl{
     let topHeadLayer = CAShapeLayer()
     let topTailLayer = CAShapeLayer()
     let numeralsLayer = CALayer()
-    open let titleTextLayer = CATextLayer()
+    let titleTextLayer = CATextLayer()
     let overallPathLayer = CALayer()
     let repLayer:CAReplicatorLayer = {
         var r = CAReplicatorLayer()
@@ -93,6 +93,7 @@ open class TenClock : UIControl{
     open var shouldMoveHead = true
     open var shouldMoveTail = true
     
+    open var titleFont: UIFont = UIFont.systemFont(ofSize: 15)
     
     open var numeralsColor:UIColor? = UIColor.darkGray
     open var minorTicksColor:UIColor? = UIColor.lightGray
@@ -349,7 +350,7 @@ open class TenClock : UIControl{
         }
     }
     func updateWatchFaceTitle(){
-        let f = UIFont.preferredFont(forTextStyle: UIFontTextStyle.title1)
+        let f = titleFont
         let cgFont = CTFontCreateWithName(f.fontName as CFString?, f.pointSize/2,nil)
 //        let titleTextLayer = CATextLayer()
         titleTextLayer.bounds.size = CGSize( width: titleTextInset.size.width, height: 50)
