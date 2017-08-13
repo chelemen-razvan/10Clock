@@ -43,7 +43,7 @@ open class TenClock : UIControl{
     let topHeadLayer = CAShapeLayer()
     let topTailLayer = CAShapeLayer()
     let numeralsLayer = CALayer()
-    let titleTextLayer = CATextLayer()
+    open let titleTextLayer = CATextLayer()
     let overallPathLayer = CALayer()
     let repLayer:CAReplicatorLayer = {
         var r = CAReplicatorLayer()
